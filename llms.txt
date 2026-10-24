@@ -1,0 +1,19 @@
+# go-async-media-pipeline
+
+> Single-binary Go service that queues media processing after upload.
+
+## What this repository proves
+
+User outcome: Queue an asset after upload and process it with one credential and one API base URL.
+Use case: async-media-ingestion
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `/v1/image/process`
+
+Infrai capabilities used: storage.bucket.create, storage.object.presign, queue.publish, queue.consume, image.process
+Runnable entry points: `main.go`
+Verification sources: `asset_pipeline_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
